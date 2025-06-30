@@ -1,0 +1,150 @@
+/* styles.css - Estilos base para Hierros con Propósitos */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f7f7f7;
+    color: #222;
+}
+header {
+    background: #222;
+    color: #fff;
+    padding: 2rem 1rem 1rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+header nav ul li a:hover {
+    color: #ff9800;
+}
+main {
+    padding: 2rem 1rem 4rem 1rem;
+    max-width: 1100px;
+    margin: auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+.seccion {
+    margin-bottom: 3rem;
+}
+.presentacion-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+}
+.presentacion-texto {
+    flex: 2;
+}
+.presentacion-imagen img {
+    max-width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.servicios-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+.servicio {
+    flex: 1 1 250px;
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    text-align: center;
+}
+.servicio img {
+    max-width: 100px;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+}
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+.galeria-grid img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.form-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    max-width: 400px;
+    margin-bottom: 1.5rem;
+}
+.form-contacto input, .form-contacto textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+.form-contacto button {
+    background: #222;
+    color: #fff;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.form-contacto button:hover {
+    background: #ff9800;
+}
+.contacto-info {
+    background: #f3f3f3;
+    padding: 1rem;
+    border-radius: 6px;
+    max-width: 400px;
+}
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #222;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    font-size: 0.95rem;
+}
+@media (max-width: 900px) {
+    .presentacion-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+    .servicios-lista {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 600px) {
+    main {
+        padding: 1rem 0.5rem 4rem 0.5rem;
+    }
+    header, footer {
+        padding: 1rem 0.5rem;
+    }
+    .form-contacto, .contacto-info {
+        max-width: 100%;
+    }
+}

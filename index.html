@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hierros con Propósitos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('service-worker.js');
+        });
+      }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Hierros con Propósitos</h1>
+        <nav>
+            <ul>
+                <li><a href="#presentacion">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="presentacion" class="seccion">
+            <div class="presentacion-contenido">
+                <div class="presentacion-texto">
+                    <h2>Bienvenido a Hierros con Propósitos</h2>
+                    <p>Somos especialistas en herrería artística y funcional, creando soluciones a medida para tu hogar o negocio. Calidad, diseño y propósito en cada proyecto.</p>
+                </div>
+                <div class="presentacion-imagen">
+                    <img src="img/portada.jpg" alt="Portada Hierros con Propósitos" onerror="this.style.display='none'">
+                </div>
+            </div>
+        </section>
+        <section id="servicios" class="seccion">
+            <h2>Nuestros Servicios</h2>
+            <div class="servicios-lista">
+                <div class="servicio">
+                    <img src="img/servicio1.jpg" alt="Servicio 1" onerror="this.style.display='none'">
+                    <h3>Puertas y Portones</h3>
+                    <p>Fabricación e instalación de puertas y portones de hierro personalizados.</p>
+                </div>
+                <div class="servicio">
+                    <img src="img/servicio2.jpg" alt="Servicio 2" onerror="this.style.display='none'">
+                    <h3>Barandales y Escaleras</h3>
+                    <p>Diseño y montaje de barandales, escaleras y pasamanos con acabados profesionales.</p>
+                </div>
+                <div class="servicio">
+                    <img src="img/servicio3.jpg" alt="Servicio 3" onerror="this.style.display='none'">
+                    <h3>Estructuras y Proyectos Especiales</h3>
+                    <p>Soluciones a medida para estructuras metálicas y proyectos únicos.</p>
+                </div>
+            </div>
+        </section>
+        <section id="galeria" class="seccion">
+            <h2>Galería de Trabajos</h2>
+            <div class="galeria-grid">
+                <img src="img/galeria1.jpg" alt="Trabajo 1" onerror="this.style.display='none'">
+                <img src="img/galeria2.jpg" alt="Trabajo 2" onerror="this.style.display='none'">
+                <img src="img/galeria3.jpg" alt="Trabajo 3" onerror="this.style.display='none'">
+                <img src="img/galeria4.jpg" alt="Trabajo 4" onerror="this.style.display='none'">
+            </div>
+        </section>
+        <section id="contacto" class="seccion">
+            <h2>Contacto</h2>
+            <form class="form-contacto" id="form-contacto">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <div class="contacto-info">
+                <p><strong>Email:</strong> raul--2003@hotmail.com</p>
+                <p><strong>Teléfono:</strong> +1 809 958 2407</p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/18099582407" target="_blank">Enviar WhatsApp</a></p>
+                <p><strong>Ubicación:</strong> República Dominicana, Santo Domingo Oeste, Pantoja</p>
+            </div>
+            <script>
+              document.getElementById('form-contacto').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const nombre = document.getElementById('nombre').value;
+                const email = document.getElementById('email').value;
+                const mensaje = document.getElementById('mensaje').value;
+                // Enviar a WhatsApp
+                const telefono = '18099582407';
+                const textoWA = encodeURIComponent(`Hola, soy ${nombre} (${email}).\n${mensaje}`);
+                window.open(`https://wa.me/${telefono}?text=${textoWA}`, '_blank');
+                // Enviar por correo (mailto)
+                const mailto = `mailto:raul--2003@hotmail.com?subject=Contacto%20desde%20la%20web&body=Nombre:%20${encodeURIComponent(nombre)}%0AEmail:%20${encodeURIComponent(email)}%0AMensaje:%20${encodeURIComponent(mensaje)}`;
+                window.open(mailto, '_blank');
+                // Mostrar mensaje de confirmación
+                alert('¡Gracias por contactarnos! Tu mensaje ha sido enviado por WhatsApp y correo.');
+                document.getElementById('form-contacto').reset();
+              });
+            </script>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Hierros con Propósitos. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
