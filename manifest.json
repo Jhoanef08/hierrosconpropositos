@@ -1,11 +1,11 @@
 {
   "name": "Hierros con Propósitos",
-  "short_name": "Hierros",
+  "short_name": "HierrosProp",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#222222",
-  "theme_color": "#222222",
-  "description": "Sitio web de Hierros con Propósitos, optimizado como PWA.",
+  "background_color": "#181818",
+  "theme_color": "#e53935",
+  "description": "Herrería artística y funcional. Transformando el hierro en arte y propósito.",
   "icons": [
     {
       "src": "img/icon-192.png",

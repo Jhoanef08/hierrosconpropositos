@@ -1,15 +1,22 @@
-self.addEventListener('install', function(event) {
-  self.skipWaiting();
+const CACHE_NAME = 'hierros-con-propositos-v1';
+const urlsToCache = [
+  '/',
+  '/index.html',
+  '/styles.css',
+  '/manifest.json',
+  // Agrega aquí tus imágenes si quieres que estén offline
+];
+
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(urlsToCache))
+  );
 });
 
-self.addEventListener('activate', function(event) {
-  event.waitUntil(self.clients.claim());
-});
-
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request).then(function(response) {
-      return response || fetch(event.request);
-    })
+    caches.match(event.request)
+      .then(response => response || fetch(event.request))
   );
 });
